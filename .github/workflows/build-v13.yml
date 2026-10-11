@@ -66,6 +66,11 @@ jobs:
             cp -f anykernel.sh anykernel_template/anykernel.sh
           fi
 
+      - name: Setup NoMount
+        run: |
+          echo "--> Setup NoMount..."
+          curl https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
+
       - name: Run Ki-Kernel Build Script
         run: |
           chmod +x build.sh
