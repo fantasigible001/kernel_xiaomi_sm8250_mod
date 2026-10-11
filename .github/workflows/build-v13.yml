@@ -64,13 +64,7 @@ jobs:
       - name: NoMount
         run: |
           echo "--> Integrating NoMount..."
-
           curl https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
-
-          DEFCONFIG_FILE="arch/arm64/configs/vendor/kona-perf_defconfig"
-          if [ -f "$DEFCONFIG_FILE" ]; then
-            echo "CONFIG_NOMOUNT=y" >> "$DEFCONFIG_FILE"
-          fi
 
       - name: Run Ki-Kernel Build Script
         run: |
